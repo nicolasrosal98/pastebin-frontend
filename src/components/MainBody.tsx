@@ -37,13 +37,17 @@ function MainBody(): JSX.Element {
     .slice(pasteList.length - 10, pasteList.length)
     .reverse()
     .map((paste, index) => (
-        <div onClick={() => setDisplayPaste(paste.paste_body)} key={index} className="card">
-            <OnePaste
-            id={paste.id}
-            paste_title={paste.paste_title}
-            paste_body={paste.paste_body}
-            />   
-        </div>
+      <div
+        onClick={() => setDisplayPaste(paste.paste_body)}
+        key={index}
+        className="card"
+      >
+        <OnePaste
+          id={paste.id}
+          paste_title={paste.paste_title}
+          paste_body={paste.paste_body}
+        />
+      </div>
     ));
 
   return (
@@ -57,23 +61,26 @@ function MainBody(): JSX.Element {
         ></input>
         <br />
         <textarea
-            className="body"
-            onChange={(e) => {
-                setBody(e.target.value);
-              }}
-            placeholder="Paste Body"
-            required
+          className="body"
+          onChange={(e) => {
+            setBody(e.target.value);
+          }}
+          placeholder="Paste Body"
+          required
         />
         <button onClick={onSubmitButton}>Submit</button>
       </form>
       <div className="grid">{listPaste}</div>
-      <p>{displayPaste.split("\n").map(function(item, index) {
-            return (
-                <li key={index} className="multiline-list">
-                    {item}
-                    <br/>
-                </li>
-        )})}</p>
+      <p>
+        {displayPaste.split("\n").map(function (item, index) {
+          return (
+            <li key={index} className="multiline-list">
+              {item}
+              <br />
+            </li>
+          );
+        })}
+      </p>
     </>
   );
 }
