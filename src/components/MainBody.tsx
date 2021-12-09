@@ -6,6 +6,7 @@ function MainBody(): JSX.Element {
   const [title, setTitle] = useState<string>("");
   const [body, setBody] = useState<string | null>(null);
   const [pasteList, setPasteList] = useState<Paste[]>([]);
+  const [displayPaste, setDisplayPaste] = useState<string>("");
 
   useEffect(() => {
     const fetchEpisodes = async () => {
@@ -14,7 +15,6 @@ function MainBody(): JSX.Element {
       );
       const jsonBody: Paste[] = await response.json();
       setPasteList(jsonBody);
-      console.log(jsonBody);
     };
 
     fetchEpisodes();
@@ -37,12 +37,17 @@ function MainBody(): JSX.Element {
     .slice(pasteList.length - 10, pasteList.length)
     .reverse()
     .map((paste, index) => (
-      <OnePaste
-        id={paste.id}
-        paste_title={paste.paste_title}
-        paste_body={paste.paste_body}
+      <div
+        onClick={() => setDisplayPaste(paste.paste_body)}
         key={index}
-      />
+        className="card"
+      >
+        <OnePaste
+          id={paste.id}
+          paste_title={paste.paste_title}
+          paste_body={paste.paste_body}
+        />
+      </div>
     ));
 
   return (
@@ -55,18 +60,27 @@ function MainBody(): JSX.Element {
           placeholder="Paste Title"
         ></input>
         <br />
-        <input
-          type="text"
+        <textarea
           className="body"
           onChange={(e) => {
             setBody(e.target.value);
           }}
           placeholder="Paste Body"
           required
-        ></input>
+        />
         <button onClick={onSubmitButton}>Submit</button>
       </form>
-      {listPaste}
+      <div className="grid">{listPaste}</div>
+      <p>
+        {displayPaste.split("\n").map(function (item, index) {
+          return (
+            <li key={index} className="multiline-list">
+              {item}
+              <br />
+            </li>
+          );
+        })}
+      </p>
     </>
   );
 }
