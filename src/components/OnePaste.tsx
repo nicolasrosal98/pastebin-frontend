@@ -6,7 +6,7 @@ export interface Paste {
 
 function OnePaste(props: Paste): JSX.Element {
   return (
-    <button>
+    <button className="card-paste">
       <h1>{props.paste_title}</h1>
       <ul>
         {props.paste_body
