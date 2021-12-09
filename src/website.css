@@ -1,26 +1,25 @@
 * {
-    margin: 0%;
-    font-family: sans-serif;
+  margin: 0%;
+  font-family: sans-serif;
 }
 
 /* CSS Navigation*/
 
 .navigation {
-    background-color: #06141c;
-    width: 100%;
-    color: #ffffff;
-    position: relative;
-    box-sizing: border-box;
-    border-bottom-right-radius: 7px;
-    border-bottom-left-radius: 7px;
-    box-shadow: 0px 10px 6px #b2bec3;
+  background-color: #06141c;
+  width: 100%;
+  color: #ffffff;
+  position: relative;
+  box-sizing: border-box;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  box-shadow: 0px 10px 6px #b2bec3;
 }
 
 .navigation p {
-    font-size: x-large;
-    padding: 20px
+  font-size: x-large;
+  padding: 20px;
 }
-
 
 /* CSS Body*/
 .multiline-list {
@@ -42,55 +41,55 @@
 }
 
 .card-full {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0px 10px 6px #b2bec3;
-  }
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0px 10px 6px #b2bec3;
+}
 
 .body {
-    margin: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 20px;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
 }
 
 input {
-    size: 20px;
+  size: 20px;
 }
 
 .p-form {
-    margin: 10px;
+  margin: 10px;
 }
 
 .form-title-input {
-    width: 100%;
-    padding: 15px 20px;
-    margin: 8px;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 15px 20px;
+  margin: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .form-body-input {
-    width: 100%;
-    height: 250px;
-    padding: 15px 20px;
-    margin: 8px;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: 100%;
+  height: 250px;
+  padding: 15px 20px;
+  margin: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .submit-button {
-    width: 100%;
-    background-color: #06141c;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
+  width: 100%;
+  background-color: #06141c;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
 }
 
 h2 {
-    padding-left: 25px;
+  padding-left: 25px;
 }
