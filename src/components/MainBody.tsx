@@ -48,7 +48,7 @@ function MainBody(): JSX.Element {
           setDisplayPaste({ body: paste.paste_body, title: paste.paste_title })
         }
         key={index}
-        className="card"
+        className="card-paste"
       >
         <OnePaste
           id={paste.id}
@@ -70,7 +70,7 @@ function MainBody(): JSX.Element {
             })
           }
           key={index}
-          className="card"
+          className="card-paste"
         >
           <OnePaste
             id={paste.id}
@@ -83,41 +83,47 @@ function MainBody(): JSX.Element {
 
   return (
     <>
+      <form>
+        <input
+          type="text"
+          className="form-title-input"
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Paste Title"
+        ></input>
+        <br />
+        <textarea
+          className="form-body-input"
+          onChange={(e) => {
+            setBody(e.target.value);
+          }}
+          placeholder="Paste Body"
+          required
+        />
+        <button onClick={onSubmitButton} className="submit-button">
+          Submit
+        </button>
+      </form>
       <div className="body">
-        <form>
-          <input
-            type="text"
-            className="form-title-input"
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Paste Title"
-          ></input>
-          <br />
-          <textarea
-            className="form-body-input"
-            onChange={(e) => {
-              setBody(e.target.value);
-            }}
-            placeholder="Paste Body"
-            required
-          />
-          <button onClick={onSubmitButton} className="submit-button">
-            Submit
-          </button>
-        </form>
-        <div className="card-full">
-          <h2>{displayPaste.title}</h2>
-          <p className="p-form">
-            {displayPaste.body.split("\n").map(function (item, index) {
-              return (
-                <li key={index} className="multiline-list">
-                  {item}
-                  <br />
-                </li>
-              );
-            })}
-          </p>
+        <div>
+          <h2>History of Pastes</h2>
+          <div className="grid-pastes">{listPaste}</div>
         </div>
-        <div className="grid-pastes">{listPaste}</div>
+        <div>
+          <h2>Full Paste</h2>
+          <div className="card-full">
+            <h2>{displayPaste.title}</h2>
+            <p className="p-form">
+              {displayPaste.body.split("\n").map(function (item, index) {
+                return (
+                  <li key={index} className="multiline-list">
+                    {item}
+                    <br />
+                  </li>
+                );
+              })}
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );

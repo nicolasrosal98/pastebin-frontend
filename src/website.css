@@ -28,9 +28,9 @@
 
 .grid-pastes {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
 }
 
 .card-paste {
@@ -38,6 +38,8 @@
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0px 10px 6px #b2bec3;
+  width: 450px;
+  height: 150px;
 }
 
 .card-full {
@@ -84,12 +86,16 @@ input {
   width: 100%;
   background-color: #06141c;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 10px;
+  margin: 10px;
   border: none;
   border-radius: 4px;
 }
 
 h2 {
   padding-left: 25px;
+}
+
+form {
+  margin: 10px;
 }
