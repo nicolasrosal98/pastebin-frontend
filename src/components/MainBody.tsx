@@ -4,17 +4,17 @@ import { Paste } from "./OnePaste";
 
 function MainBody(): JSX.Element {
   const [title, setTitle] = useState<string>("");
-  const [body, setBody] = useState<string | null>(null);
+  const [body, setBody] = useState<string>("");
   const [pasteList, setPasteList] = useState<Paste[]>([]);
   const [displayPaste, setDisplayPaste] = useState({ body: "", title: "" });
 
   useEffect(() => {
     const fetchEpisodes = async () => {
       const response = await fetch(
-        "https://pastebin-kasianico.herokuapp.com/pastes"
+        "https://pastebin-kasianico.herokuapp.com/pastes/"
       );
-      const jsonBody: Paste[] = await response.json();
-      setPasteList(jsonBody);
+      const jsonBody = await response.json();
+      setPasteList(jsonBody.data);
     };
 
     fetchEpisodes();
