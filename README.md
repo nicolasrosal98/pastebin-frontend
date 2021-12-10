@@ -3,7 +3,9 @@
 This repo sets up the frontend for a pastebin web application:
 
 [Project Documentation](https://www.notion.so/weareacademy/Team-C3A6-Project-1-520281047840438db29cd7d7e57dd5c7)
+
 [Website Link](https://pastebin-kasianico.netlify.app)
+
 [Back-end Repo](https://github.com/nicolasrosal98/pastebin-backend)
 
 ## Install
