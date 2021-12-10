@@ -34,7 +34,6 @@ function MainBody(): JSX.Element {
           }),
         });
       }
-      console.log(body);
     } catch (err) {
       console.error(err);
     }
